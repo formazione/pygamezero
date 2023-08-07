@@ -10,13 +10,9 @@ def kill_processes():
 
 def game():
     try:
-        print("Loading loop4.py - july 2023.")
-        print("Coming back after a little while")
-        time.sleep(1)
+        print("Loading loop7.py - july 2023.")
         print("To my mom and dad.")
-        # speak
-        speak("Let's start","en")
-        time.sleep(5)
+
         from code2.loop7 import run
         run()
     except Exception:

@@ -9,6 +9,6 @@ init.py quit() update_display() screen, clock, frame, group
 
 '''
 if __name__ == "__main__":
-    run = Game()
+    window = Game()
     while True:
-        run.update()
+        window.update()

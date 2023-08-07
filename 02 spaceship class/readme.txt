@@ -6,8 +6,8 @@ README.TXT
 import pygame, sys
 from game import Game
 
-run istanza di Game
-run.update() metodo che avvia il loop
+window 				istanza della classe Game
+window.update() 	metodo che refresh screen -> <class Game>
 
 ----------------------------------
 -game.py
@@ -16,8 +16,12 @@ import pygame
 from init import *
 
 class Game
-__init__ self.timer
-update(self)
+	__init__(self)
+		self.timer
+	
+	update_display(self)
+	
+	update(self): refresh screen e sprites.update() <class Ship>
 
 ---------------------------------
 -init.py
@@ -26,9 +30,15 @@ import pygame
 import sys
 
 quit()
-update_display()
-screen,
-clock,
-timer,
-frame,
-group
+clock
+frame
+
+
+''''''''''''
+ship
+''''''''''''
+
+screen
+sprites   pygame.sprite.Group
+Ship <class>
+spaceship_init()
