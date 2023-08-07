@@ -19,7 +19,6 @@ class Game():
                     pygame.quit()
                     sys.exit()
 
-
     def update_display(self):
         pygame.display.flip()
         clock.tick(frame)
@@ -35,7 +34,7 @@ class Game():
 pygame.init()
 clock = pygame.time.Clock()
 frame = 60
-spaceship_init()
+ship_init()
 
 if __name__ == "__main__":
     window = Game()
