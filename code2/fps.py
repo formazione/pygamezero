@@ -18,9 +18,9 @@ def render_fps(background=""):
 	if background != "":
 		bck.fill((255,0,0))
 		bck.blit(fps_text,(0,0))
-		screen.blit(scale(bck),(0,0))
+		screen.blit(bck, (0,0))
 	else:
-		screen.blit(scale(fps_text),(0,0))
+		screen.blit(fps_text ,(0,0))
 
 
 def mainloop():

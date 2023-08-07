@@ -3,6 +3,7 @@ try:
     from code.init6 import *
 except:
     from init6 import *
+    from tts import *
 class Shape(pygame.sprite.Sprite):
     def __init__(self, x, y, color, pos=""):
         super().__init__()
@@ -13,15 +14,31 @@ class Shape(pygame.sprite.Sprite):
         self.surface.fill(color) # color red for it
         self.speed = 4
         self.pos = pos
+        self.drct = ""
         group.add(self) # adding each square to this pygame.sprite.Group to update easily
-    def update(self, go, timer):
-        ''' moving squares by the id of the key pressed '''
-        match go:
-            case 1073741903: self.rectx += self.speed
-            case 1073741904: self.rectx -= self.speed
-            case 1073741905: self.recty += self.speed
-            case 1073741906: self.recty -= self.speed
+
+
+    def diagonal_movements(self):
+        keys = pygame.key.get_pressed() #check the key pressed
+        if keys[pygame.K_LEFT]:
+            self.rectx -= self.speed
+        if keys[pygame.K_RIGHT]:
+            self.rectx += self.speed
+        if keys[pygame.K_UP]:
+            self.recty -= self.speed
+        if keys[pygame.K_DOWN]:
+            self.recty += self.speed
+        if self.drct != "":
+            self.drct == ""
+
+
+    def update(self, timer):
+        ''' 3 type of movements '''
+        self.diagonal_movements()
+        # self.ortogonal_movements()
+        # self.bad_movements(go)
         self.pulsar(timer) # changing pos and color each frame
+
 
     def colorvariation(self): # <- pulsar
         ''' fills the surfaces with variable colors '''
@@ -64,6 +81,8 @@ def spaceship_init():
 
 
 if __name__ == "__main__":
-    print("Cannot run from here: THIS IS JUST SPRITES MODULE START FROM loop4.py")
-    time.sleep(1)
+    speak("run loop","en")
+    from tkinter import messagebox
+    messagebox.showinfo("Not main file","Run loop7.py")
+    os.system("py loop7.py")
     os.system("kill")
